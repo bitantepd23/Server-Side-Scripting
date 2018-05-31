@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Computer Store</title>
+
+    <!-- Bootstrap -->
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+	<style type='text/css'>
+	  select{border: 1px solid #669; font:  bold 14pt; color: #3399cc; border-radius: 5px;}
+	  .c1 { width: 150px; font-weight: bold;  color: #036;}
+	  td { padding: 5px; }
+	  input[type=text] {border: 2px solid #036; border-radius: 2px;}
+	  .outerbox { border: 2px solid #036; border-radius: 5px; margin:0; padding: 0; margin-bottom: 10px; }
+	  #ctr { margin-top: 10px;}
+	</style>
+ </head>
+
+ <body class='container'>
+
+
+<h2>Online Computer Order Form</h2>
+
+<form name="OrderForm" action='assignment2.php' method="post">
+<div class='row outerbox'>
+<h2>Configure your system</h2>
+  <table class='table'>
+	<tr>
+	     <td class='c1'> Operating System</td>
+	     <td>
+		<select  name="os" id="os">
+		    <option  value="0">--select operating system--</option>
+		    <option value="w7">Windows 7</option>
+		    <option value="w7p">Windows 7 Pro</option>
+		    <option value="w8">Windows 8.1</option>
+			<option value="u12">Ubuntu 12.04</option>
+		</select>
+	     </td>
+	</tr>
+	<tr>
+  	   <td class='c1'> Processor</td>
+	   <td>
+		<select  name="processor" id="processor">
+		    <option selected="selected" value="0">Intel Core i3</option>
+		    <option value="200">Intel Core i5</option>
+		    <option value="350">Intel Core i7</option>
+
+		</select>
+	   </td>
+	</tr>
+
+	<tr>
+	   <td class='c1'>Memory</td>
+	   <td>
+		<input type="radio" name="memory" id="memory1" value="2200"  >128 GB
+		<input type="radio" name="memory" id="memory2" value="1600" >64 GB
+		<input type="radio" name="memory" id="memory3" value="500">32 GB
+		<input type="radio" name="memory" id="memory4" value="295">16 GB
+		<input type="radio" name="memory" id="memory5" value="0"  checked="checked" >8 GB
+
+	   </td>
+	</tr>
+    <tr>
+	   <td class='c1'>Hard Drive</td>
+	   <td>
+	 	<input type="radio" name="hd" id="hd1" value="0" checked >320GB
+	 	<input type="radio" name="hd" id="hd2" value="100" >500GB
+	 	<input type="radio" name="hd" id="hd3" value="200" >1000GB
+	 	<input type="radio" name="hd" id="hd4" value="350" >2000GB
+	   </td>
+    </tr>
+
+    <tr>
+	   <td class='c1'>CD/DVD Driver</td>
+	   <td>
+	 	<input type="radio" name="cdr" id="cdr1" value="0" checked class="d_drive">DVD-ROM Drive
+	 	<input type="radio" name="cdr" id="cdr2" value="50" class="d_drive">DVD+/-RW Drive
+	   </td>
+    </tr>
+  </table>
+ </div>
+ <div class='row outerbox'>
+     <h2>Contact Information</h2>
+     <table class='table'>
+		<tr>
+			<td class='c1'>First Name</td>
+			<td> <input type="text" name="First" size="20" id='first' placeholder="First name"></td>
+		</tr>
+		<tr>
+			<td class='c1'>Last Name</td>
+			<td><input type="text" name="Last" size="20" id='last' placeholder="Last name"></td>
+		</tr>
+		<tr>
+			<td class='c1'>Phone #  </td>
+			<td><input type="text" name="Phone" size="20" id='phone' placeholder="Phone"></td>
+		</tr>
+	 </table>
+    </div>
+ <h3>Special instructions/Comments:</h3>
+ <textarea name='comments' placeholder="If you have any comments or special instructions, please enter them here" class='form-control' rows='3' >
+ </textarea>
+<p id='ctr'><input type="submit" value="Finalize sale" class='btn btn-primary'>  &nbsp;  <input type="reset" value="Cancel" class='btn btn-danger'>
+</p>
+  </form>
+ </body>
+</html>

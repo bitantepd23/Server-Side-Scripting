@@ -1,0 +1,176 @@
+--------------
+SELECT first_name, last_name, phone FROM customers
+--------------
+
++------------+-------------+----------------+
+| first_name | last_name   | phone          |
++------------+-------------+----------------+
+| Christian  | Schmidt     | (262) 555-8352 |
+| Jill       | Finelli     | (262) 555-8746 |
+| Jackie     | Hollander   | (262) 555-7352 |
+| Jean       | Montgolfier | (262) 555-9264 |
+| Juan       | Santiago    | (262) 555-9865 |
+| Julie      | Smith       | (262) 555-9785 |
+| Louis      | Pascal      | (262) 555-6439 |
+| Nadia      | Likorsky    | (262) 555-8352 |
+| Rudolph    | Geiger      | (262) 555-6286 |
+| Ryan       | Greene      | (262) 555-8371 |
+| Sony       | Nathan      | (262) 555-1234 |
++------------+-------------+----------------+
+11 rows in set (0.00 sec)
+
+--------------
+SELECT title, year, movie_id FROM movies
+WHERE type="Drama"
+--------------
+
++---------------------------------+------+----------+
+| title                           | year | movie_id |
++---------------------------------+------+----------+
+| The Lost Weekend                | 1945 |        4 |
+| Hamlet                          | 1948 |        5 |
+| On the Waterfront               | 1954 |        8 |
+| Ben Hur                         | 1959 |       11 |
+| Lawrence of Arabia              | 1962 |       13 |
+| The Sound of Music              | 1965 |       15 |
+| Airport                         | 1970 |       18 |
+| The French Connection           | 1971 |       19 |
+| The Godfather                   | 1972 |       20 |
+| The Sting                       | 1973 |       21 |
+| The Godfather, Part 2           | 1974 |       22 |
+| One Flew Over the Cuckoo's Nest | 1975 |       23 |
+| The Deer Hunter                 | 1978 |       27 |
+| Kramer vs. Kramer               | 1979 |       28 |
+| Chariots of Fire                | 1981 |       30 |
+| Gandhi                          | 1982 |       34 |
+| Terms of Endearment             | 1983 |       35 |
+| Amadeus                         | 1984 |       36 |
+| Out of Africa                   | 1985 |       37 |
+| Platoon                         | 1986 |       39 |
+| The Last Emperor                | 1987 |       41 |
+| The Princess Bride              | 1987 |       42 |
+| Rain Man                        | 1988 |       44 |
+| Dances With Wolves              | 1990 |       47 |
+| Schindler's List                | 1993 |       52 |
+| Braveheart                      | 1995 |       57 |
+| Seven                           | 1995 |       58 |
+| Fargo                           | 1996 |       59 |
+| The English Patient             | 1996 |       60 |
+| Titanic                         | 1997 |       61 |
+| Shakespeare in Love             | 1998 |       62 |
+| The Pianist                     | 2002 |       67 |
+| Million Dollar Baby             | 2004 |       69 |
+| The Prestige                    | 2006 |       74 |
+| Slumdog Millionaire             | 2008 |       80 |
++---------------------------------+------+----------+
+35 rows in set (0.00 sec)
+
+--------------
+SELECT title, year, movie_id FROM movies
+WHERE type="Adventure"
+--------------
+
++--------------------------------+------+----------+
+| title                          | year | movie_id |
++--------------------------------+------+----------+
+| All Quiet on the Western Front | 1930 |        1 |
+| Around the World in 80 Days    | 1955 |        9 |
+| A Man for All Seasons          | 1966 |       16 |
+| Raiders of the Lost Ark        | 1981 |       31 |
+| Matrix                         | 1999 |       63 |
+| Into the Wild                  | 2007 |       77 |
++--------------------------------+------+----------+
+6 rows in set (0.00 sec)
+
+--------------
+SELECT title, year, movie_id FROM movies
+WHERE type="Animated"
+--------------
+
++-------------------------+------+----------+
+| title                   | year | movie_id |
++-------------------------+------+----------+
+| Who Framed Roger Rabbit | 1998 |       45 |
+| Rescuers Down Under     | 1990 |       48 |
+| Beauty and the Beast    | 1991 |       49 |
+| The Lion King           | 1994 |       56 |
+| Tarzan                  | 1999 |       64 |
++-------------------------+------+----------+
+5 rows in set (0.00 sec)
+
+--------------
+SELECT `movies`.title, `movies`.type, `rentals`.date_out
+FROM `movies`, `rentals`
+WHERE `movies`.movie_id = `rentals`.movie_id AND `rentals`.date_out < '2009-12-15'
+--------------
+
++-------------------------+-----------+------------+
+| title                   | type      | date_out   |
++-------------------------+-----------+------------+
+| ET                      | Sci-Fi    | 2009-02-15 |
+| Star Wars               | Sci-Fi    | 2009-02-10 |
+| Braveheart              | Drama     | 2009-02-12 |
+| Rescuers Down Under     | Animated  | 2009-10-25 |
+| The English Patient     | Drama     | 2009-10-22 |
+| Star Wars: Episode I    | Sci-Fi    | 2009-02-14 |
+| Raiders of the Lost Ark | Adventure | 2009-02-27 |
+| Oliver!                 | Musical   | 2009-12-01 |
+| Matrix                  | Adventure | 2009-04-12 |
+| Star Wars: Episode I    | Sci-Fi    | 2009-12-13 |
+| Star Wars               | Sci-Fi    | 2009-12-10 |
+| Braveheart              | Drama     | 2009-12-12 |
+| Rescuers Down Under     | Animated  | 2009-10-25 |
+| The English Patient     | Drama     | 2009-10-22 |
+| Star Wars: Episode I    | Sci-Fi    | 2009-12-14 |
+| Oliver!                 | Musical   | 2009-12-01 |
+| Matrix                  | Adventure | 2009-11-12 |
+| Star Wars: Episode I    | Sci-Fi    | 2009-12-13 |
+| Fargo                   | Drama     | 2009-10-31 |
+| Matrix                  | Adventure | 2009-10-22 |
+| Seven                   | Drama     | 2009-12-14 |
+| Who Framed Roger Rabbit | Animated  | 2009-12-01 |
+| Tootsie                 | Comedy    | 2009-11-12 |
+| Star Wars               | Sci-Fi    | 2009-12-13 |
++-------------------------+-----------+------------+
+24 rows in set (0.00 sec)
+
+--------------
+SELECT `movies`.title, `movies`.type, `rentals`.date_out
+FROM `movies`, `rentals`
+WHERE `movies`.movie_id = `rentals`.movie_id AND `movies`.type = "Sci-Fi" AND `rentals`.date_out < '2009-12-15'
+--------------
+
++----------------------+--------+------------+
+| title                | type   | date_out   |
++----------------------+--------+------------+
+| ET                   | Sci-Fi | 2009-02-15 |
+| Star Wars            | Sci-Fi | 2009-02-10 |
+| Star Wars: Episode I | Sci-Fi | 2009-02-14 |
+| Star Wars: Episode I | Sci-Fi | 2009-12-13 |
+| Star Wars            | Sci-Fi | 2009-12-10 |
+| Star Wars: Episode I | Sci-Fi | 2009-12-14 |
+| Star Wars: Episode I | Sci-Fi | 2009-12-13 |
+| Star Wars            | Sci-Fi | 2009-12-13 |
++----------------------+--------+------------+
+8 rows in set (0.00 sec)
+
+--------------
+SELECT title, type, year FROM movies
+WHERE type="Drama" AND year >= 1990 AND year <= 2000
+--------------
+
++---------------------+-------+------+
+| title               | type  | year |
++---------------------+-------+------+
+| Dances With Wolves  | Drama | 1990 |
+| Schindler's List    | Drama | 1993 |
+| Braveheart          | Drama | 1995 |
+| Seven               | Drama | 1995 |
+| Fargo               | Drama | 1996 |
+| The English Patient | Drama | 1996 |
+| Titanic             | Drama | 1997 |
+| Shakespeare in Love | Drama | 1998 |
++---------------------+-------+------+
+8 rows in set (0.00 sec)
+
+Bye

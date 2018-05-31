@@ -1,0 +1,31 @@
+#Select database
+USE cs382-2171_bitantepd23;
+
+# Selectelect first name, last name, and phone number from List of Clients (clients)
+SELECT first_name, last_name, phone FROM customers;
+
+# Display the title, year, and movie_id fields for all those movies that are of Drama type.
+SELECT title, year, movie_id FROM movies
+WHERE type="Drama";
+
+# Display the title, year, and movie_id fields for all those movies that are of Adventure type.
+SELECT title, year, movie_id FROM movies
+WHERE type="Adventure";
+
+# Display the title, year, and movie_id fields for all those movies that are of Animated type.
+SELECT title, year, movie_id FROM movies
+WHERE type="Animated";
+
+# Display the title, type, and date_out fields for all those movies checked out before 2009-12-15.
+SELECT `movies`.title, `movies`.type, `rentals`.date_out
+FROM `movies`, `rentals`
+WHERE `movies`.movie_id = `rentals`.movie_id AND `rentals`.date_out < '2009-12-15';
+
+# Display the title, type, and date_out fields for all those movies checked out before 2009-12-15 that areSci-Fi movies.
+SELECT `movies`.title, `movies`.type, `rentals`.date_out
+FROM `movies`, `rentals`
+WHERE `movies`.movie_id = `rentals`.movie_id AND `movies`.type = "Sci-Fi" AND `rentals`.date_out < '2009-12-15';
+
+# Display the title, type, and year fields for all those Drama type movies produced between 1990 and 2000.
+SELECT title, type, year FROM movies
+WHERE type="Drama" AND year >= 1990 AND year <= 2000;

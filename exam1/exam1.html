@@ -1,0 +1,91 @@
+
+
+<!doctype html>
+<html lang="en">
+<head>
+ <meta charset="utf-8">
+ <!-- Set the viewport so this responsive site displays correctly on mobile devices -->
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+
+ <!-- Include bootstrap CSS -->
+ <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<!-- Include jQuery library -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<title>CS382 Exam I</title>
+<style>
+  p, table {margin-left: 50px;}
+  .datagrid { width: 400px;}
+</style>
+</head>
+<body>
+<h3>Problem 1: Customer Information</h3>
+<form name='p1' method="post" action="problem1.php">
+ <table class='table table-bordered datagrid'>
+   <tr>
+     <td><label for='fullname' >Name:</label><input type='text' name="fullname" class='form-control' id='fullname'></td>
+   </tr>
+   <tr>
+     <td><label for='email' >Email: </label><input type='text' name="email" id='email' class='form-control'></td>
+   </tr>
+
+ </table>
+
+      <p><input type='submit' name='submit' value="Display Customer Information" class='btn btn-primary'>
+		<input type='reset' class='btn btn-danger'></p>
+</form>
+
+
+<h3>Problem 2: Carpet Installation Cost Calculator  </h3>
+ <form name='p2' method="post" action="problem2.php">
+ <table class='table table-bordered datagrid'>
+   <tr>
+     <td><label for='roomLength' >Length:</label><input type='text' name="roomLength" class='form-control' id='roomLength'></td>
+   </tr>
+   <tr>
+     <td><label for='roomWidth' >Width: </label><input type='text' name="roomWidth" id='roomWidth' class='form-control'></td>
+   </tr>
+
+ </table>
+
+      <p><input type='submit' name='submit' value="Calculate Carpet Installation Cost" class='btn btn-primary'>
+		<input type='reset' class='btn btn-danger'></p>
+</form>
+
+</hr>
+
+
+<hr></hr>
+
+
+<h3>Problem 3: Display Sales Report</h3>
+
+     <p><a href='problem3.php'>Display Sales Report</a> </p>
+
+<hr></hr>
+
+
+<h3>Problem 4: Display Summary</h3>
+<p><a href='problem4.php'>Display Summary</a> </p>
+<hr>
+
+
+<h3>Problem 5: Display Monthly Sales</h3>
+<form name='p6' method="post" action="problem5.php">
+	<p>Select month: <select name='month'>
+		<option value='-1'>-- select Item --</option>
+		<option value='LG4kLED'>LG4kLED TV</option>
+		<option value='SONY4KHDR'>SONY4KHDR TV</option>
+		<option value='SAMSUNG4KUHD'>SAMSUNG4KUHD TV</option>
+		<option value='iPhone6'>iPhone6</option>
+		<option value='iPhone7'>iPhone7</option>
+		<option value='S7EDGE'>S7EDGE Phone</option>
+		<option value='LGG5LTE'>LGG5LTE Phone</option>
+
+	</select></p>
+
+     <p><input type='submit' name='submit' value="Display Monthly Sales" class='btn btn-primary'>
+</form>
+
+</body>
+</html>
